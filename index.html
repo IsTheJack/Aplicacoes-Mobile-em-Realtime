@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Flisol Resende 2017</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					<script type="text/template">
+						![Alt text](assets/react_firebase.png)
+
+						### Aplicações Mobile em Realtime com React Native e Firebase
+					</script>
+				</section>
+
+				<section>
+					<section>
+						<h2>Quem sou</h2>
+						<ul>
+							<li>Roberto Oliveira</li>
+							<li>Aluno 4º ano em SI (AEDB)</li>
+							<li>Programador/Engenheiro Frontend na Getty/IO</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="assets/chrono_thrigger.png">
+					</section>
+
+					<section>
+						<img src="assets/rpgmakervx.jpg">
+						<p>RPG Maker VX</p>
+					</section>
+
+					<section>
+						<h2>Começa logo!</h2>
+						<img src="assets/nervoso.gif">
+					</section>
+				</section>
+
+				<!-- Resumo Javascript -->
+				<section>
+					<section>
+						<img src="assets/jsLogo.png" height="350px">
+						<h2>Resuminho</h2>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							## Javascript
+
+							### Não será abordado
+
+							* História
+							* Detalhes de Sintaxe
+							* Api de manipulação de DOM
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Javascript
+
+							### Características
+
+							* Interpretada
+							* Tipagem Dinâmica, Fraca e Implícita
+							* Programação Orientada a Objetos
+								* Scheme
+								* Baseada em Protótipos
+							* Programação Imperativa
+							* Programação Funcional
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							## Javascript
+
+							### Funcional
+
+							* Funções de Primeira Classe (FCF)
+								* Funções de Alta Ordem (HOF)
+									* Closures
+									* Curring
+							* Imutabilidade (Immutable.js)
+								* Sem efeitos colaterais
+								* Thread Safe
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Funções de Primeira Classe
+
+							Arrow Functions.
+
+							```javascript
+							function soma(a, b) {
+								return a + b;
+							}
+
+							// 1/6
+							```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Funções de Primeira Classe
+
+							Arrow Functions.
+
+							```javascript
+							function soma(a, b)
+								return a + b;
+
+							// 2/6
+							```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Funções de Primeira Classe
+
+							Arrow Functions.
+
+							```javascript
+							soma(a, b) return a + b;
+
+							// 3/6
+							```
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Funções de Primeira Classe
+
+							Arrow Functions.
+
+							```javascript
+							const soma = (a, b) => return a + b;
+
+							// 4/6
+							```
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### Funções de Primeira Classe
+
+							Arrow Functions.
+
+							```javascript
+							const soma = (a, b) => a + b;
+
+							// 5/6
+							```
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### Funções de Primeira Classe
+
+							Arrow Functions.
+
+							```javascript
+							function soma(a, b) {
+								return a + b;
+							}
+
+							const soma = (a, b) => a + b;
+
+							// 6/6
+							```
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### Funções de Primeira Classe
+
+							Funções são tradadas como valor.
+
+							```javascript
+							function soma(a, b) {
+								return a + b;
+							}
+
+							function realizaOpecacao(operacao, a, b) {
+								return operacao(a, b);
+							}
+
+							realizaOperacao(soma, 10, 10); // 20
+							```
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### Funções Aplicativas
+
+							Funções que recebem funções para tratar coleções.
+
+							Ex: Função map de uma array.
+
+							```javascript
+							const numeros = [1, 2, 3, 4, 5];
+
+							const dobro = (n) => n * 2;
+
+							numeros.map(dobro); //  [2, 4, 6, 8, 10]
+							```
+						</script>
+					</section>
+				</section>
+
+				<!-- Falando sobre React -->
+				<section>
+					<section>
+						<img src="assets/react.svg" height="350px" style="border: 0; box-shadow: none">
+						<h2>React</h2>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							## React
+							### Uma biblioteca para criação de interfaces
+
+							* Declarativo
+							* Baseado em Componentes
+							* Aprenda uma vez, escreva em qualquer lugar
+						</script>
+					</section>
+
+					<section>
+						<img src="assets/componentes.gif">
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							## React
+							### Criando um componente
+
+							```javascript
+							class OlaMundo extends React.Component {
+							  render() {
+							    return <div>Olá {this.props.nome}</div>;
+							  }
+							}
+
+							ReactDOM.render(<OlaMundo nome="Flisol Resende" />, mountNode);
+							```
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							## React
+							### Ciclo de Vida de um Componente
+
+							```javascript
+							class OlaMundo extends React.Component {
+								// Outras funções do ciclo de vida
+								componentsDidMount() {
+									console.log('Olá');
+								}
+
+								componentWillUnmount() {
+									console.log('Adeus!');
+								}
+
+								render() {
+								  return <div>Olá {this.props.nome}</div>;
+								}
+							}
+							```
+						</script>
+					</section>
+				</section>
+
+				<!-- React Native -->
+				<section>
+					<section>
+						<img src="assets/react.svg" height="350px" style="border: 0; box-shadow: none">
+						<h2>E React Native?</h2>
+						<p>É tudo isso, só que pra Mobile!</p>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							## React Native
+							### Características
+
+							* Uma alternativa livre
+							* Android e IOS
+							* Independente de IDE
+							* Alterou no código, altera na tela
+							* Vários pacotes e componentes disponíveis
+							* É NATIVO!!1!1
+						</script>
+					</section>
+					<section>
+						Showcase:
+						<img src="assets/rnshowcase.png" height="550px" style="border: 0; box-shadow: none">
+					</section>
+				</section>
+
+				<!-- Firebase -->
+				<section>
+					<section>
+						<img src="assets/firebase.svg" height="350px" style="border: 0; box-shadow: none">
+						<h2>Firebase</h2>
+					</section>
+					<section>
+						<img src="assets/firebase_showing.png" style="border: 0; box-shadow: none">
+					</section>
+					<section>
+						<h2>Banco de dados em tempo real?</h2>
+						<img src="assets/headexplode.gif" style="border: 0; box-shadow: none">
+					</section>
+
+					<section>
+						<img src="assets/realtime_1.gif" style="border: 0; box-shadow: none">
+					</section>
+
+					<section>
+						<img src="assets/realtime_2.gif" style="border: 0; box-shadow: none">
+					</section>
+				</section>
+
+				<!-- Demo -->
+				<section>
+					<h3>Hora da Demo!</h3>
+					<img src="assets/demo.gif" style="border: 0; box-shadow: none">
+				</section>
+
+				<section>
+					<!-- <h3>Obrigado!</h3> -->
+					<img src="assets/thank.gif" height="550px" style="border: 0; box-shadow: none">
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
